@@ -57,43 +57,57 @@ class Manager(Employee):
 
     def print_emps(self):
         for emp in self.employees:
-            print('--->',emp)
+            print('--->',emp.fullname())
 
 emp_1 = Employee('corey' , 'Schafer' , 10000)
 emp_2 = Employee('tomas' , 'muller' , 20000)
 
-# print(emp_1.__dict__)
-# emp_1.amount_of_raise = 1.05 #only changing raise amount of emp_1
-# #I could change all employees raise amount with "Employee.amount_of_raise = 1.05"
-# emp_1.apply_reise()
-# emp_2.apply_reise()
-# print(emp_1.pay)
-# print(emp_2.pay)
-# print(Employee.num_of_emps)
+print(emp_1.__dict__)
+emp_1.amount_of_raise = 1.05 #only changing raise amount of emp_1
+#I could change all employees raise amount with "Employee.amount_of_raise = 1.05"
+emp_1.apply_reise()
+emp_2.apply_reise()
+print(emp_1.pay)
+print(emp_2.pay)
+print(Employee.num_of_emps)
 
-# #creating another emp by string var manual
-# emp_string_1 = 'John-doe-70000'
-# emp_string_2 = 'Steve-smith-30000'
-# emp_string_3 = 'mr-hello-50000'
+#creating another emp by string var manual
+emp_string_1 = 'John-doe-70000'
+emp_string_2 = 'Steve-smith-30000'
+emp_string_3 = 'mr-hello-50000'
 
-# first , last , pay = emp_string_1.split('-')
-# emp_3 = Employee(first , last , pay)
-# print(emp_3.__dict__)
+first , last , pay = emp_string_1.split('-')
+emp_3 = Employee(first , last , pay)
+print(emp_3.__dict__)
 
-# #now i am going to create another emp by using a @classmethod's def 
-# emp_4 = Employee.from_string(emp_string_2)
-# print(emp_4.__dict__)
+#now i am going to create another emp by using a @classmethod's def 
+emp_4 = Employee.from_string(emp_string_2)
+print(emp_4.__dict__)
 
-# # i am going to use @staticmethod 
-# import datetime
-# my_date = datetime.date(2020 , 4 , 10)
+# i am going to use @staticmethod 
+import datetime
+my_date = datetime.date(2020 , 4 , 10)
 
-# print(Employee.is_workday(my_date))
+print(Employee.is_workday(my_date))
 
-#now i am going to use inheritance
+#now i am going to use inheritance (Developer class)
 emp_d1 = Developer('cristiano' , 'ronaldo' , 90000 , 'python')
 print(emp_d1.email)
 print(emp_d1.pay)
 emp_d1.apply_reise()
 print(emp_d1.pay)
 print(emp_d1.prog_lang)
+
+#now i am going to use inheritance (Manager class)
+mgr_1 = Manager('david' , 'vila' , 50000 , [emp_d1])
+print(mgr_1.__dict__)
+mgr_1.print_emps()
+
+# now I am going to use "isinstance" 
+print(isinstance(mgr_1 , Manager))
+print(isinstance(mgr_1 , Employee))
+print(isinstance(emp_1 , Manager))
+
+#now I want to use "issubclass" with is for classes and show is the furst class a sub class of the second one 
+print(issubclass(Developer , Employee))
+print(issubclass(Developer , Manager))

@@ -38,3 +38,21 @@ num.sort()
 print(num)#from less to more or if these are strings they will be in alphabetical order
 num.sort(reverse = True)
 print(num)
+
+#creating lists
+squares = [value**2 for value in range(1 , 20)]
+print(squares)
+print(max(squares))
+print(min(squares))
+print(sum(squares))
+print(squares[2:5])
+print(squares[-3:])
+print(squares[:-3])
+
+numbers = ['one' , 'two' , 'three' , 'four']
+if 'one' in numbers:
+    print('one is a number')
+if 'two' not in numbers:
+    print('owww')
+else:
+    print('it should be in numbers...')

@@ -56,3 +56,9 @@ if 'two' not in numbers:
     print('owww')
 else:
     print('it should be in numbers...')
+
+#creat dictionery
+first_dict = {'english':'hello' , 'germany':'hallo'}
+print(first_dict['germany'])
+first_dict['nuknown'] = 'error404'
+print(first_dict)

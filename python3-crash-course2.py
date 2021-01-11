@@ -7,3 +7,4 @@ print(somethingsfortest.get('color_4' , 'i could not found it'))
 for key , value in somethingsfortest.items():
     print(f"\nkey: {key}")
     print(f"value: {value}")
+# i will do it ...

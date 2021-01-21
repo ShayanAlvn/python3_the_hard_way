@@ -7,4 +7,15 @@ print(somethingsfortest.get('color_4' , 'i could not found it'))
 for key , value in somethingsfortest.items():
     print(f"\nkey: {key}")
     print(f"value: {value}")
-# i will do it ...
+
+#A List in a Dictionary
+favorite_languages = {
+        'jen': ['python', 'ruby'],
+        'sarah': ['c'],
+        'edward': ['ruby', 'go'],
+        'phil': ['python', 'haskell'],}
+
+for name , languages in favorite_languages.items():
+    print(name)
+    for language in languages:
+        print(language)
